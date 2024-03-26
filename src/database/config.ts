@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize-typescript";
 import { Penguin } from "../models/penguinDB";
 import { readFileSync } from 'fs';
 
-let password: string = readFileSync('../../pw.txt', 'utf-8').trim();
+let password: string = readFileSync('../pw.txt', 'utf-8').trim();
 
 const connection = new Sequelize({
     dialect: "mysql",
