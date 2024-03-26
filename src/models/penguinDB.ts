@@ -19,7 +19,7 @@ export class Penguin extends Model {
     major!: string;
 
     @Column({
-        type: DataType.NUMBER,
+        type: DataType.INTEGER,
         allowNull: false,
     })
     cohort!: number;
