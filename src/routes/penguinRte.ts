@@ -10,14 +10,14 @@ import {
 
 const routes = Router();
 
-routes.post("/", createPenguin);
+routes.post("/create", createPenguin);
 
-routes.post("/", getAllUsers);
+routes.post("/getUsers", getAllUsers);
 
-routes.post("/:id", deletePenguin);
+routes.post("/:id/delete", deletePenguin);
 
-routes.post("/:id", updatePenguin);
+routes.post("/:id/update", updatePenguin);
 
-routes.post("/:id", getUserByName);
+routes.post("/:id/name", getUserByName);
 
 export default routes;
