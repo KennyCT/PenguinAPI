@@ -2,7 +2,7 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
 
 @Table({
     timestamps: false,
-    tableName: "Penguin Users"
+    tableName: "Penguin_Users"
 })
 
 export class Penguin extends Model {
