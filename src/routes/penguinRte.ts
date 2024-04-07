@@ -16,7 +16,7 @@ routes.post("/getUsers", getAllUsers);
 
 routes.post("/:id/delete", deletePenguin);
 
-routes.post("/:id/update", updatePenguin);
+routes.post("/:id", updatePenguin);
 
 routes.post("/:id/name", getUserByName);
 
