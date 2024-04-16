@@ -5,7 +5,7 @@ import {
     deletePenguin,
     updatePenguin,
     getAllUsers,
-    getUserByName
+    getUserById
 } from "../controller/penguinFn"
 
 const routes = Router();
@@ -16,8 +16,8 @@ routes.get("/getUsers", getAllUsers);
 
 routes.post("/:id/delete", deletePenguin);
 
-routes.post("/:id", updatePenguin);
+routes.post("/:id/update", updatePenguin);
 
-routes.get("/:id/name", getUserByName);
+routes.get("/:id/user", getUserById);
 
 export default routes;

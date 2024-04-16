@@ -39,10 +39,10 @@ export const getAllUsers: RequestHandler = async(req, res, next) => {
         .json({ message: "Penguin fetched successfully", data: allUsers });
 };
 
-export const getUserByName: RequestHandler = async(req, res, next) => {
-    const {name} = req.params;
-    const user: Penguin|null = await Penguin.findByPk(name);
+export const getUserById: RequestHandler = async(req, res, next) => {
+    const {id} = req.params;
+    const user: Penguin|null = await Penguin.findByPk(id);
 
     return res
-        .json({ message: "Penguin deleted successfully", data: user });
+        .json({ message: "Penguin retrieved successfully", data: user });
 }
