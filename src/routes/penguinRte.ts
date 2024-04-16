@@ -12,12 +12,12 @@ const routes = Router();
 
 routes.post("/create", createPenguin);
 
-routes.post("/getUsers", getAllUsers);
+routes.get("/getUsers", getAllUsers);
 
 routes.post("/:id/delete", deletePenguin);
 
 routes.post("/:id", updatePenguin);
 
-routes.post("/:id/name", getUserByName);
+routes.get("/:id/name", getUserByName);
 
 export default routes;
