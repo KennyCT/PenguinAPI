@@ -6,7 +6,8 @@ import {
     updateUser,
     getAllUsers,
     getUserById,
-    getUserByEmail
+    getUserByEmail,
+    isCredValid
 } from "../controller/penguinFn"
 
 const routes = Router();
@@ -22,5 +23,7 @@ routes.get("/users", getAllUsers);
 routes.get("/:id/user/id", getUserById);
 
 routes.get("/:email/user/email", getUserByEmail);
+
+routes.get("/:email/:password_hash/user/cred", isCredValid);
 
 export default routes;

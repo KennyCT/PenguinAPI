@@ -44,6 +44,7 @@ export const getUserById: RequestHandler = async(req, res, next) => {
     const user: Penguin|null = await Penguin.findByPk(id);
 
     return res
+        .status(200)
         .json({ message: "Penguin retrieved successfully", data: user });
 }
 
@@ -52,5 +53,24 @@ export const getUserByEmail: RequestHandler = async(req, res, next) => {
     const user: Penguin|null = await Penguin.findOne({ where: {email} });
 
     return res
+        .status(200)
         .json({ message: "Penguin retrieved successfully", data: user });
+}
+
+export const isCredValid: RequestHandler = async(req, res, next) => {
+    const {email, password_hash} = req.params;
+    const isCredentialsValid = await Penguin.findOne({ 
+        where: {
+            email,
+            password_hash
+        }
+    });
+
+    if (!isCredentialsValid) {
+      return res.status(400).json({ message: 'Invalid credentials' });
+    }
+
+    return res
+        .status(200)
+        .json({ message: "Penguin credentials valid" });
 }

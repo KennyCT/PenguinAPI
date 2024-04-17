@@ -29,4 +29,10 @@ export class Penguin extends Model {
         allowNull: false,
     })
     cohort!: number;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: false,
+    })
+    password_hash!: string;
 }
