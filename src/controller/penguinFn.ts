@@ -49,7 +49,7 @@ export const getUserById: RequestHandler = async(req, res, next) => {
 
 export const getUserByEmail: RequestHandler = async(req, res, next) => {
     const {email} = req.params;
-    const user: Penguin|null = await Penguin.findByEmail(email);
+    const user: Penguin|null = await Penguin.findOne({ where: {email} });
 
     return res
         .json({ message: "Penguin retrieved successfully", data: user });

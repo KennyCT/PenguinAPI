@@ -17,10 +17,10 @@ routes.post("/:id/delete", deleteUser);
 
 routes.post("/:id/update", updateUser);
 
-routes.get("/getUsers", getAllUsers);
+routes.get("/users", getAllUsers);
 
-routes.get("/:id/user", getUserById);
+routes.get("/:id/user/id", getUserById);
 
-routes.get("/:email/user", getUserByEmail);
+routes.get("/:email/user/email", getUserByEmail);
 
 export default routes;
