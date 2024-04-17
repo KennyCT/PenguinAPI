@@ -6,11 +6,18 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
 })
 
 export class Penguin extends Model {
+    // class model attributes
     @Column({
         type: DataType.STRING,
         allowNull: false,
     })
     name!: string;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: false,
+    })
+    email!: string;
 
     @Column({
         type: DataType.STRING,
@@ -23,4 +30,9 @@ export class Penguin extends Model {
         allowNull: false,
     })
     cohort!: number;
+
+    // class model functions
+    public static async findByEmail(email: string): Promise<Penguin | null> {
+    return await Penguin.findOne({ where: { email } });
+    }
 }

@@ -7,7 +7,7 @@ const app = express();
 
 app.use(json());
 
-app.use(urlencoded({extended: true}))
+app.use(urlencoded({extended: true}));
 
 app.use("/penguin", penguinRoutes);
 
@@ -26,6 +26,6 @@ connection.sync().then(() => {
     console.log("Database synced successfully");
 }).catch((error) => {
     console.log("Error", error)
-})
+});
 
 app.listen(3000);

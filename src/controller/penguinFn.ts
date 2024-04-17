@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 
 import { Penguin } from "../models/penguinDB";
 
-export const createPenguin: RequestHandler = async(req, res, next) => {
+export const createUser: RequestHandler = async(req, res, next) => {
     const createdPenguin = await Penguin.create({ ...req.body });
 
     return res
@@ -10,7 +10,7 @@ export const createPenguin: RequestHandler = async(req, res, next) => {
         .json({ message: "Penguin created successfully", data: createdPenguin });
 };
 
-export const deletePenguin: RequestHandler = async(req, res, next) => {
+export const deleteUser: RequestHandler = async(req, res, next) => {
     const {id} = req.params;
     const deletedPenguin: Penguin|null = await Penguin.findByPk(id);
 
@@ -21,7 +21,7 @@ export const deletePenguin: RequestHandler = async(req, res, next) => {
         .json({ message: "Penguin deleted successfully", data: deletedPenguin });
 };
 
-export const updatePenguin: RequestHandler = async(req, res, next) => {
+export const updateUser: RequestHandler = async(req, res, next) => {
     const {id} = req.params;
     await Penguin.update({ ...req.body }, {where: {id}});
     const updatedPenguin: Penguin|null = await Penguin.findByPk(id);
@@ -36,12 +36,20 @@ export const getAllUsers: RequestHandler = async(req, res, next) => {
 
     return res
         .status(200)
-        .json({ message: "Penguin fetched successfully", data: allUsers });
+        .json({ message: "Penguins fetched successfully", data: allUsers });
 };
 
 export const getUserById: RequestHandler = async(req, res, next) => {
     const {id} = req.params;
     const user: Penguin|null = await Penguin.findByPk(id);
+
+    return res
+        .json({ message: "Penguin retrieved successfully", data: user });
+}
+
+export const getUserByEmail: RequestHandler = async(req, res, next) => {
+    const {email} = req.params;
+    const user: Penguin|null = await Penguin.findByEmail(email);
 
     return res
         .json({ message: "Penguin retrieved successfully", data: user });
