@@ -8,7 +8,6 @@ In order to use, pull code into separate directory and use **npm install** to in
 
 Use **npm start** in order to run API locally and create a URL for local use. To create a public URL, use **npx localtunnel --port XXXX** to create publically accessible URL for use in code.
 
-In order to perform API calls, users must use following format:
-<url>/penguin/<function_route&parameters>
+In order to perform API calls, users must use following format: <url>/penguin/<function_route&parameters>
 
 Note: API is only functional on local machines that contain the password for the database, all other users will not be able to run the API otherwise.
