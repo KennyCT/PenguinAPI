@@ -1,6 +1,6 @@
 import { json, urlencoded } from 'body-parser';
 import express from 'express';
-import penguinRoutes from './routes/penguinRte';
+import userRoutes from './routes/userRte';
 import connection from './database/config';
 
 const app = express();
@@ -9,7 +9,7 @@ app.use(json());
 
 app.use(urlencoded({extended: true}));
 
-app.use("/penguin", penguinRoutes);
+app.use("/users", userRoutes);
 
 app.use((
     err: Error,

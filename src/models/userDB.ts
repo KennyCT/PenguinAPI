@@ -5,7 +5,7 @@ import { Table, Model, Column, DataType } from "sequelize-typescript";
     tableName: "Penguin_Users"
 })
 
-export class Penguin extends Model {
+export class User extends Model {
     @Column({
         type: DataType.STRING,
         allowNull: false,
