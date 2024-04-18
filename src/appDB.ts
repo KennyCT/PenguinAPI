@@ -1,6 +1,7 @@
 import { json, urlencoded } from 'body-parser';
 import express from 'express';
 import userRoutes from './routes/userRte';
+import iceburgRoutes from './routes/iceburgRte';
 import connection from './database/config';
 
 const app = express();
@@ -10,6 +11,8 @@ app.use(json());
 app.use(urlencoded({extended: true}));
 
 app.use("/users", userRoutes);
+
+app.use("/iceburgs", userRoutes);
 
 app.use((
     err: Error,
