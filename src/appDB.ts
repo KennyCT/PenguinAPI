@@ -12,7 +12,7 @@ app.use(urlencoded({extended: true}));
 
 app.use("/users", userRoutes);
 
-app.use("/iceburgs", userRoutes);
+app.use("/iceburgs", iceburgRoutes);
 
 app.use((
     err: Error,

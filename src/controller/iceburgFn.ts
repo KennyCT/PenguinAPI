@@ -40,8 +40,8 @@ export const getAllIceburgs: RequestHandler = async(req, res, next) => {
 };
 
 export const getIceburgByName: RequestHandler = async(req, res, next) => {
-    const {id} = req.params;
-    const iceburg: Iceburg|null = await Iceburg.findByPk(id);
+    const {name} = req.params;
+    const iceburg: Iceburg|null = await Iceburg.findByPk(name);
 
     return res
         .status(200)

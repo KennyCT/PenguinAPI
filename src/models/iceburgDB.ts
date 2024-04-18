@@ -19,14 +19,14 @@ export class Iceburg extends Model {
     school_name!: string;
 
     @Column({
-        type: DataType.INTEGER,
+        type: DataType.STRING,
         allowNull: false,
     })
-    members!: number;
+    location!: string;
 
     @Column({
         type: DataType.INTEGER,
         allowNull: false,
     })
-    location!: string;
+    members!: number;
 }
